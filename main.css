@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body
+
+.header {
+    height: 200px;
+    width: 100%;
+    border: 2px black solid;
+    margin: auto;
+    display: inline-block;
+    font-size: 0px;
+}
+
+.header-img-and-title {
+    width: 50%;
+    height: 196px;
+    display: inline-block;
+    border: 2px black solid;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.title {
+    color: black;
+}
+
+header img {
+    height: 192px;
+}
+
+.start-page {
+    height: 500px;
+    width: 100%;
+    border: 2px black solid;
+}
+
+.button {
+    margin-left: auto;
+    margin-right: auto;
+    height: 3em;
+    cursor: pointer;
+}
+
+.score-keeper {
+    height: 50px;
+    width: 100%;
+    border: 2px black solid;
+    vertical-align: middle;
+}
+
+.question-and-answer {
+    height: 425px;
+    width: 100%;
+    border: 2px black solid;
+}
+.question {
+    height: 25%;
+    width: 100%;
+    border: 2px black solid;
+}
+.option {
+    height: 75%;
+    width: 100%;
+    border: 2px black solid; 
+}
+
+.answer {
+    height: 100%;
+    width: 100%;
+    border: 2px black solid;
+}
+
+.end {
+    height: 500px;
+    width: 100%;
+    border: 2px black solid;
+}
