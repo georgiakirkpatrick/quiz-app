@@ -7,6 +7,7 @@
     <title>What Are You Wearing?</title>
     <link rel = "stylesheet" type = "text/css" href = "main.css">
 </head>
+
 <body>
     <header>
         <div class = "header">
@@ -18,34 +19,45 @@
                 <h1> What Are You Wearing? </h1>
                 <h2> Fashion, Fiber, and the Environment </h2>
             </div>
-        </div>
-        
+        </div> 
     </header>
-    <main>
 
-        <div class = "start-page"> 
+    <main>
+        <!-- Start Page: this is what the user sees when they first navigate to the app -->
+        <div class = "start-page js-start-page"> 
             <h3> How much do you know about the fiber in your clothes?</h3>
             <p>Test your knowledge with this ten-question quiz.  Ready to go?  Press 'start' to begin.</p>
             <button type="button" class="button">Start</button>
         </div>
-        <div class = "score-keeper"> Score Keeper </div>
-        <div class = "qa"> QA </div>
-        <div class = "question"> Question </div>
-        <div class = "option"> 
-            <ul>
-                <li> Option 1 </li>
-                <li> Option 2 </li>
-                <li> Option 3 </li>
-                <li> Option 4 </li>
-            </ul>
+
+        <!-- Question / Answer Page: these are the quiz questions and answers the user navigates through -->
+        <div class = "score-keeper js-score-keeper"> <p>Score Keeper</p> </div>
+        <div class = "question-and-answer">
+
+            <!-- Question Page -->
+            <div class = "question js-question"></div>
+            <div class = "option js-option"> 
+                <button type="button" class="button"> Submit </button>
+            </div>
+
+            <!-- Answer Page -->
+            <div class = "answer js-answer">
+                <button type="button" class="button"> Next </button>
+            </div>
+
+        <!-- End Page     -->
+        <div class = "end">
+            <h3>Your Score</h3>
+            <p>Your score was 5/10.  Want to retake the quiz?  Press 'retake' to begin.</p>
+            <button type="button" class="button"> Retake </button>
         </div>
-        <div class = "answer"> Answer </div>
-        <div class = "end"> End </div>
     </main>
+
     <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-        <script src="index.js"></script>
+        crossorigin="anonymous">
+    </script>
+    <script src="index.js"></script>
 </body>
 </html>
