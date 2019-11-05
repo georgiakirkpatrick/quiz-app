@@ -295,7 +295,7 @@ function setQuestionNumberAndScoreToZero() {
 
 function retakeQuiz() {
     // Retake quiz.
-    $('.js-end').on('click', 'js-retake-button', event => {
+    $('.js-end').on('click', '.js-retake-button', event => {
         console.log('`retakeQuiz` ran')
         setQuestionNumberAndScoreToZero()
         $('.js-current-question-number').html(0)
