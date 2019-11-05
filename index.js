@@ -188,7 +188,6 @@ function startQuiz() {
         let currentQuestionNumber = 0
         let currentScore = 0
         $('.js-start').hide()
-        $('.js-end').hide()
         $('.js-score-keeper').show()
         $('.js-current-score').text(0)
         $('.js-current-question-number').text(1)
@@ -305,6 +304,7 @@ function retakeQuiz() {
         $('.js-current-question-number').html(0)
         $('.js-current-score').text(0)
         $('.js-start').show()
+        $('.js-end').hide()
     })
 }
 
