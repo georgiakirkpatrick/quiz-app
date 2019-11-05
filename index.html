@@ -5,52 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>What Are You Wearing?</title>
-    <link rel = "stylesheet" type = "text/css" href = "main.css">
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Palanquin&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "main.css">
 </head>
+
+<!-- type = "text/css" -->
 
 <body>
     <header>
-        <div class = "header">
-            <div class = "header-img-and-title">
-                <img src="https://cdn.shopify.com/s/files/1/0880/6156/files/Savannah-Hayes-Collection-01_7bdb6e9b-7b91-4b5e-8f77-3c52501f45ed.jpg?v=1567362182"
-                alt="Rolls of fabric">
-            </div>    
-            <div class = "header-img-and-title title">
-                <h1> What Are You Wearing? </h1>
-                <h2> Fashion, Fiber, and the Environment </h2>
-            </div>
-        </div> 
+        <section class = "quiz-title">
+            <h1> What Are You Wearing? </h1>
+        </section> 
     </header>
+
+
 
     <main>
         <!-- Start Page: this is what the user sees when they first navigate to the app -->
-        <div class = "start-page js-start-page"> 
-            <h3> How much do you know about the fiber in your clothes?</h3>
-            <p>Test your knowledge with this ten-question quiz.  Ready to go?  Press 'start' to begin.</p>
-            <button type="button" class="button">Start</button>
-        </div>
+        <section class = "start-background js-start">
+            <section class = "start-page">
+                    <h3> How much do you know about the fiber in your clothes?</h3>
+                    <p>Test your knowledge with this ten-question quiz.</p>
+                    <button type="button" class="start-button">Start</button>
+            </section>
+        </section>
 
         <!-- Question / Answer Page: these are the quiz questions and answers the user navigates through -->
-        <div class = "score-keeper js-score-keeper"> <p>Score Keeper</p> </div>
-        <div class = "question-and-answer">
+        <section class = "question-and-answer js-question-and-answer">
+            
+            <section class = "score-keeper js-score-keeper">
+                    <ul>
+                        <li>Question: <span class="js-current-question-number">  0  </span>  of  10</li>
+                        <li>Score: <span class="js-current-score">  0</span></li>
+                    </ul>
+            </section>
 
             <!-- Question Page -->
-            <div class = "question js-question"></div>
-            <div class = "option js-option"> 
-                <button type="button" class="button"> Submit </button>
-            </div>
+            <section class = "question js-question-and-options"></section> 
 
             <!-- Answer Page -->
-            <div class = "answer js-answer">
-                <button type="button" class="button"> Next </button>
-            </div>
+            <section class = "answer js-answer"></section>
+
+        </section>
 
         <!-- End Page     -->
-        <div class = "end">
-            <h3>Your Score</h3>
-            <p>Your score was 5/10.  Want to retake the quiz?  Press 'retake' to begin.</p>
-            <button type="button" class="button"> Retake </button>
-        </div>
+        <section class = "end js-end"></section>
     </main>
 
     <script

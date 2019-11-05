@@ -1,78 +1,292 @@
 * {
     box-sizing: border-box;
     text-align: center;
-}
-
-.header {
-    height: 200px;
-    width: 100%;
-    border: 2px black solid;
-    margin: auto;
-    display: inline-block;
-    font-size: 0px;
-}
-
-.header-img-and-title {
-    width: 50%;
-    height: 196px;
-    display: inline-block;
-    border: 2px black solid;
-    vertical-align: middle;
+    font-family: 'Palanquin', sans-serif;
     font-size: 20px;
+    line-height: 25px;
 }
 
-.title {
-    color: black;
+.quiz-title {
+    height: 100px;
+    width: 100%;
+    vertical-align: middle;
+    /* border: 2px black solid; */
+    background-color: darkslategray;
+    color: white;
+    /* display: flex; */
 }
 
-header img {
-    height: 192px;
+h1 {
+    padding-top: 30px;
+    font-family: 'Monoton', cursive;
+    font-size: 40px;
+}
+
+h2, h3 {
+    font-family: 'Palanquin', sans-serif;
+    padding: 20px;
+}
+
+p {    
+    font-family: 'Palanquin', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.start-background {
+    /* height: 700px; */
+    width: 100%;
+    border: 5px solid #242732;
+    background: url("https://cdn.abetterlemonadestand.com/wp-content/uploads/2017/07/How-to-Start-a-Clothing-Line.jpg");
+    background-size: 100%;
+    /* display: flex; */
 }
 
 .start-page {
-    height: 500px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 500px;
+    background: white;
     border: 2px black solid;
+    padding: 20px;
+    /* vertical-align: middle; */
+    margin: auto;
+    margin-top: 60px;
+    border-radius: 5px;
+    /* display: flex; */
 }
 
-.button {
-    margin-left: auto;
-    margin-right: auto;
-    height: 3em;
+button {
+    height: 50px;
+    width: 100px;
+    font-family: 'Palanquin', sans-serif;
+    font-style: bold;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 1px;
+    padding-left: 10px;
+    /* transition-duration: 0.35s; */
+    /* transition-timing-function: ease-in-out; */
     cursor: pointer;
+    background-color: #242732;
+    border: 5px solid #c74f1a;
+    border-radius: 5px;
 }
 
 .score-keeper {
     height: 50px;
     width: 100%;
-    border: 2px black solid;
-    vertical-align: middle;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: 'Palanquin', sans-serif;
+    border-radius: 5px;
+    /* display: flex; */
 }
 
+/* .score-keeper ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+} */
+
 .question-and-answer {
-    height: 425px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 600px; */
     width: 100%;
-    border: 2px black solid;
+    display: none;
+    /* border: 2px black solid; */
+    /* display: flex; */
 }
-.question {
-    height: 25%;
+
+
+.question-string {
     width: 100%;
-    border: 2px black solid;
+    /* padding: 30px; */
+    /* padding-left: 300px;
+    padding-right: 300px; */
+    font-family: 'Palanquin', sans-serif;
+    /* border: 2px black solid; */
+    /* color: purple; */
 }
-.option {
-    height: 75%;
-    width: 100%;
-    border: 2px black solid; 
+
+.one-word-answer {
+    font-size: 30px;
+    font-style: bold;
 }
 
 .answer {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer p {
     width: 100%;
-    border: 2px black solid;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-family: 'Palanquin', sans-serif;
+    /* border: 2px black solid; */
+    /* color: blue; */
 }
 
 .end {
     height: 500px;
     width: 100%;
-    border: 2px black solid;
+    display: none;
+    /* display: flex; */
+    /* border: 2px black solid; */
 }
+
+@media screen and (min-width: 320px) {
+    .quiz-title {
+        height: 160px;
+        background-color: thistle;
+    }
+
+    h1 {
+        font-size: 40px;
+        padding: 20px;
+    }    
+
+    h2, h3 {
+        font-family: 'Palanquin', sans-serif;
+    }
+
+    .start-page {
+        height: 300px;
+        width: 300px;
+    }
+
+    .start-background {
+        height: 800px;
+        width: 100%;
+    }
+
+    .question-string {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+
+    .score-keeper li {
+        display: inline-block;
+        padding-left: 5px;
+        padding-right: 10px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        list-style: none;
+    }
+
+    .answer p img {
+        width: 300px;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .quiz-title {
+        height: 100px;
+        width: 100%;
+        background-color: darkslategray;
+    }
+
+    h1 {
+        font-size: 40px;
+        padding: 30px;
+    }
+
+    h2, h3 {
+        font-family: 'Palanquin', sans-serif;
+    }
+
+    .start-page {
+        height: 300px;
+        width: 500px;
+    }
+
+    .start-background {
+        height: 1366px;
+    }
+
+    .question-string {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .score-keeper li {
+        display: inline-block;
+        padding-left: 50px;
+        padding-right: 100px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        list-style: none;
+    }
+
+    .answer p img {
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .quiz-title {
+        height: 160px;
+        width: 100%;
+        background-color: darkslategray;
+    }
+
+    h1 {
+        font-size: 60px;
+        padding: 50px;
+    }
+
+    h2, h3 {
+        font-family: 'Palanquin', sans-serif;
+        padding: 20px;
+    }
+    
+    .start-page {
+        height: 300px;
+        width: 500px;
+    }
+
+    .start-background {
+        height: 1404px;
+    }
+
+    .question-string {
+        width: 100%;
+        padding: 30px;
+        padding-left: 300px;
+        padding-right: 300px;
+
+    }
+
+    .score-keeper li {
+        display: inline-block;
+        padding-left: 50px;
+        padding-right: 100px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        list-style: none;
+    }
+
+
+    .answer p {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .answer p img {
+        width: 450px;
+    }
+}  

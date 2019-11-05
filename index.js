@@ -1,158 +1,129 @@
 'use strict';
 
-function startQuiz() {
-    // Start the quiz, advance the page to the first question.
-    console.log('`startQuiz` ran')
-}
-
-function renderQuestion() {
-    // Display the question and options, beginning with the first in STORE and cyclying through to 10.
-    console.log('`renderQuestion` ran')
-    const questionString = '<p>Modal, lyocell, tencel, acetate, and viscose are all variants of which cellulose-based fiber developed '
-    'in France in the 1890s?</p>';
-
-    // insert that HTML into the DOM
-    $('.js-question').html(questionString);
-}
-
-function submitAnswer() {
-    // Submit user's answer, advance page to reveal correct answer.
-    console.log('`submitAnswer` ran')
-}
-
-function renderAnswer() {
-    // Display the answer, source, and answerImage, beginning with the first in STORE and cyclying through to 10.
-    console.log('`renderAnswer` ran')
-}
-    
-function nextQuestion() {
-    // Next question, advance page to next question.
-    console.log('`nextQuestion` ran')
-}
-
-function retakeQuiz() {
-    // Retake quiz.
-    console.log('`retakeQuiz` ran')
-}
-
 const STORE = [
     // This is where all the questions and answers are stored.
     {// 1
-        question: 'Modal, lyocell, tencel, acetate, and viscose are all variants of which cellulose-based fiber developed in France in the 1890s?',
+        question: `Modal, lyocell, tencel, acetate, and viscose are all variants of which cellulose-based fiber developed in 
+        France in the 1890s?`,
         options: [
             'Spandex',
             'Polyester',
             'Nylon',
             'Rayon'
         ],
-        answer: 'Rayon. ' +
-        'Rayon, modal, lyocell, tencel, acetate, and viscose are all considered semi-synthetic fibers. While they are made ' +
-        'with natural plant materials such as wood pulp, their production involves harmful chemicals like carbon disulfide.',
+        answer:'Rayon',
+        explanation: `Rayon, modal, lyocell, tencel, acetate, and viscose are all considered semi-synthetic fibers. While they 
+        are made with natural plant materials such as wood pulp, their production involves harmful chemicals like carbon disulfide.`,
         source: 'https://en.wikipedia.org/wiki/Rayon#Modal',
-        answerImage: '<img src = "https://www.renonation.sg/wp-content/uploads/microplasticslaundry.jpg" alt = "">'
+        answerImage: '<img src = "images/rayon-factory.jpg" alt = "Rayon factory.">'
     },
     {//2
-        question: 'Which fiber is currently the most common globally used for fabric in clothing?',
+        question: `Which fiber is currently the world's most commonly-used clothing fabric?`,
         options: [
             'Cotton',
             'Wool',
             'Polyester',
             'Rayon'],
-        answer: 'Polyester. Nearly 70 million barrels of oil are used each year to make polyester around the world, which ' +
-        'is now the most commonly used fiber in making clothes.',
+        answer: 'Polyester',
+        explanation: `Nearly 70 million barrels of oil are used each year to make polyester around the world, which is now the 
+        most commonly used fiber in making clothes.`,
         source: 'https://en.wikipedia.org/wiki/Polyester#History',
-        answerImage: '<img src = "https://cdn.theatlantic.com/assets/media/img/mt/2017/09/RTXX3CV/lead_720_405.jpg?mod=1533691903" alt = "">'
+        answerImage: '<img src = "images/oil.jpg" alt = "Oil barrels and worker.">'
     },
     {//3
-        question: 'Which of these fibers is biodegradable?',
-        options: [
-            'Modal',
-            'Nylon',
-            'Spandex',
-            'Polyester'],
-        answer: 'Modal.' +
-        'Modal fibers are plant-based.',
-        source: 'https://en.wikipedia.org/wiki/Rayon#Modal',
-        answerImage: '<img src = "https://www.havep.com/sites/default/files/uploads/beeld--tencel.png" alt = "">'
-    },
-    {//4
-        question: 'Studies have shown that synthetic fibers release microplastics when washed. Microplastics are very' +
-        'small pieces of plastic that pollute the environment. Which of the following fibers do NOT contribute to ' +
-        'microplastic pollution?',
+        question: `Studies have shown that synthetic fibers release microplastics when washed. Microplastics are very 
+        small pieces of plastic that pollute the environment. Which of the following fibers do NOT contribute to 
+        microplastic pollution?`,
         options: [
             'Spandex',
             'Polyester',
             'Nylon',
             'Rayon'],
-        answer: 'Rayon.' +
-        'A scientific-study by Plymouth University measured how many fibres are released during washing.  They found that ' +
-        'each garment in a load of laundry can shed more than 1,900 fibers of microplastics. For an average wash load of 6 kg, ' +
-        'over 700,000 fibres could be released per wash.',
+        answer: 'Rayon',
+        explanation: `Rayon is made of plant-based cellulose while spandex, polyester, and nylon are all forms of plastic. 
+        A scientific-study by Plymouth University measured how many fibres are released during washing synthetic fabrics.  
+        They found that each garment in a load of laundry can shed more than 1,900 fibers of microplastics. For an average 
+        wash load of 6 kg, over 700,000 fibres could be released per wash.`,
         source: 'https://en.wikipedia.org/wiki/Microplastics#cite_note-1',
-        answerImage: '<img src = "https://www.renonation.sg/wp-content/uploads/microplasticslaundry.jpg" alt = "">'
+        answerImage: '<img src = "images/microplastics-laundry.jpg" alt = "Washing machine illustration and microplastic facts.">'
+    },
+    {//4
+        question: `Which of these fibers is biodegradable?`,
+        options: [
+            'Modal',
+            'Nylon',
+            'Spandex',
+            'Polyester'],
+        answer: 'Modal',
+        explanation: `Modal is a type of rayon that is stronger and lighter than standard rayon.  
+        Modal is plant-based while nylon, spandex, and polyester are made of petrochemicals.`,
+        source: 'https://en.wikipedia.org/wiki/Rayon#Modal',
+        answerImage: '<img src = "images/modal.jpg" alt = "Modal production: trees, wood, and cellulose.">'
     },
     {//5
-        question: 'Roughly how many years does it take for polyester to decompose?',
+        question: `Roughly how many years does it take for polyester to decompose?`,
         options: [
             '80 years',
             '100 years',
             '150 years',
             '200 years'],
-        answer: '200 years.',
+        answer: '200 years',
+        explanation: '200 years.',
         source: 'https://en.wikipedia.org/wiki/Polyester#History',
-        answerImage: '<img src = "https://images.squarespace-cdn.com/content/v1/5384d5b1e4b037295d9a79a5/1555280681447-E0FZ6M6DT2AG4L7OYSX4/ke17ZwdGBToddI8pDm48kCIx9N0V2Sy5-JgI2E0RLo17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1Ua0NvAo_CFW2sT8QHZyJh6EPXonve-QtpSPmhXagV0uSCIx5s-Ld2hVaeprCce2BRQ/clothing-landfill-waste.jpg?format=2500w" alt = "">'
+        answerImage: '<img src = "images/clothing-waste.jpg" alt = "An otherwise-empty room with heaps of colorful clothing.">'
     },
     {//6
-        question: 'Which of these fibers is the most environmentally-friendly?',
+        question: 'Which of these rayon-related fibers is the most environmentally-friendly?',
         options: [
             'Tencel',
             'Modal',
             'Acetate',
             'Viscose'],
-        answer: 'Tencel.' +
-        'Although all of the above fibers are made from plants, they all rely on harmful chemicals in their manufacturing ' +
-        'processes. Only tencel is made in a closed-loop production process so that a minimal amount of harmful chemicals' +
-        'are emmitted.',
+        answer: 'Tencel',
+        explanation: `Although tencel, modal, acetate, and viscose fibers are made from plants, they all rely on harmful 
+        chemicals in their manufacturing processes. Only tencel is made in a closed-loop production process so that a 
+        minimal amount of harmful chemicals are emmitted.`,
         source: 'https://www.tencel.com/sustainability',
-        answerImage: '<img src = "https://cdn.webshopapp.com/shops/282217/files/294537375/tencel-production.jpg" alt = "">'
+        answerImage: '<img src = "images/tencel-production.jpg" alt = "Tencel production: wood, pulp, water, solvent, tencel.">'
     },
     {//7
-        question: 'Which of these fibers was the earliest to be made entirely from petrochemicals?',
+        question: `Which of these synthetic fibers was the first to be introduced to the public?`,
         options: [
             'Polyester',
             'Spandex',
             'Nylon',
             'Acryllic'],
-        answer: 'Nylon.' +
-        'The first nylons were debuted at the New York World Fair in 1939.',
+        answer: 'Nylon',
+        explanation: 'The first nylons were debuted at the New York World Fair in 1939.',
         source: 'https://en.wikipedia.org/wiki/Cotton#Competition_from_synthetic_fibers',
-        answerImage: '<img src = "https://image.glamourdaze.com/2017/06/women-demonstrating-nylon-stockings-at-the-1939-San-Francisco-Golden-Gate-International-Expo.jpg" alt = "">'
+        answerImage: '<img src = "images/nylon-1939.jpg" alt = "Women demonstrating nylon stockings at the 1939 San Francisco Golden Gate International Expo.">'
     },
     {//8
-        question: 'Unlike conventional cotton, organic cotton production does not involve any pesticides or herbicides. ' +
-        'One other difference between organic cotton and conventional cotton is:',
+        question: `Unlike conventional cotton, organic cotton production does not involve any pesticides or herbicides.  
+        One other difference between organic cotton and conventional cotton is:`,
         options: [
             'Organic cotton requires more water for irrigation.',
             'Organic cotton requires less water for irrigation.',
             'Organic cotton requires more energy to produce.',
             'Organic cotton is more absorbent.'],
-        answer: 'Organic cotton requires less water for irrigation. It uses 88% less water and 62% less energy than ' +
+        answer: 'Organic cotton requires less water for irrigation.',
+        explanation: 'Organic cotton requires less water for irrigation. It uses 88% less water and 62% less energy than ' +
         'conventional cotton.',
         source: 'http://aboutorganiccotton.org/',
-        answerImage: '<img src = "https://cdn.shopify.com/s/files/1/0006/8563/7750/files/cotton_1024x1024.jpg?v=1549891501" alt = "">'
+        answerImage: '<img src = "images/cotton.jpg" alt = "A cotton field with mountains in the distance.">'
 
     },
     {//9
-        question: 'Dupont, the largest chemical company in the world, created and popularized which of the following synthetic ' +
-        'fibers?',
+        question: `Dupont, the largest chemical company in the world, created and popularized which of the following synthetic fibers?`,
         options: [
             'Nylon',
             'Polyester',
             'Spandex',
             'All of the above'],
-        answer: 'All of the above.',
+        answer: 'All of the above',
+        explanation: 'All of the above.',
         source: 'https://en.wikipedia.org/wiki/Nylon',
-        answerImage: '<img src = "https://www.mintpressnews.com/wp-content/uploads/2017/07/AP_100125014959.jpg" alt = "">'
+        answerImage: '<img src = "images/dupont.jpg" alt = "Exterior of a Dupont facility.">'
     },
     {//10
         question: 'Which fiber helps insulate when it absorbs water vapor?',
@@ -161,28 +132,192 @@ const STORE = [
             'Cotton',
             'Wool',
             'Modal'],
-        answer: 'Wool.' +
-        'Wool fibers are covered in cuticle cells that have a waxy coating, making wool water-repellent.  Tiny pores in ' +
-        'the cuticle cells allow water vapor to pass through the wool fibre.  When wool absorbs moisture, it retains warmth. ' +
-        'For example, if you go from a warm room into a cold, damp night wearing a wool jersey, the wool picks up water vapor ' +
-        'from the air, keeping you warm. The reverse occurs when you go back into the warm room – the moisture in your jersey ' +
-        'passes into the atmosphere, cooling you down.',
+        answer: 'Wool', 
+        explanation: `Wool fibers are covered in cuticle cells that have a waxy coating, making wool water-repellent.  Tiny pores in
+        the cuticle cells allow water vapor to pass through the wool fibre.  When wool absorbs moisture, it retains warmth.  
+        For example, if you go from a warm room into a cold, damp night wearing a wool jersey, the wool picks up water vapor
+        from the air, keeping you warm.  The reverse occurs when you go back into the warm room – the moisture in your jersey
+        passes into the atmosphere, cooling you down.`,
         source: 'https://www.sciencelearn.org.nz/resources/875-wool-fibre-properties',
-        answerImage: '<img src = "https://static.sciencelearn.org.nz/images/images/000/000/982/embed/FS_TEXTIL_INF_06_Wool_fibre_properties_cortical_cells.jpg?1522297887" alt = "">'
+        answerImage: '<img src = "images/wool.jpg" alt = "Illustration of a cortical cell in wool fiber.">'
     }
 ]
 
+let currentQuestionNumber = 0
+let currentScore = 0
+
+
+
+function selectQuestion() {
+    // This function advances through the questions in STORE until the user reaches the last question.
+    if (currentQuestionNumber < STORE.length) {
+        return renderQuestion(currentQuestionNumber)
+    }
+    finalScore();
+    $('.js-current-question-number').text(10);
+}
+
+function renderQuestion(index) {
+    // Display the question and options, beginning with the first in STORE and cyclying through to 10.
+    console.log('`renderQuestion` ran')
+    let questionAndOptionString = $(`<form>
+           <fieldset>
+             <legend class="question-string" required>${STORE[index].question}</legend>
+           </fieldset>
+        </form>`)
+
+    let questionAndOptionStringFieldset = $(questionAndOptionString).find('fieldset');
+        // questionAndOptionStringFieldset finds the question so we can insert options underneath it.
+
+    STORE[index].options.forEach( function (answerValue, answerIndex) {
+        // This function iterates through STORE options at the given index and writes HTML for each,
+        // then inserts the options after the question in questionAndOptionStringFieldset
+        $(`<label for="${answerIndex}"><span>${answerValue}</span></label>
+        <input type="radio" id="${answerIndex}" name="option" value="${answerValue}" required><br><br>
+        `).appendTo(questionAndOptionStringFieldset);
+    })
+
+    $(`<button type="button" class="js-submit-button"> Submit </button>`).appendTo(questionAndOptionStringFieldset)
+        // This inserts the submit button after the four options in questionAndOptionStringFieldset.
+
+    return questionAndOptionString
+        // Finally, we return questionAndOptionString to render it in questionAndOptionStringFieldset
+}
+
+function startQuiz() {
+    // Start the quiz, advance the page to the first question.
+    console.log('`startQuiz` ran')
+    $('.js-start').on('click', '.start-button', event => {
+        console.log('`start-button` was clicked')
+        $('.js-start').hide()
+        $('.js-end').hide()
+        $('.js-current-question-number').text(1);
+        $('.js-question-and-answer').show()
+        $('.js-question-and-options').append(selectQuestion())
+    })
+}
+
+function updateScore() {
+    console.log('`updateScore` ran')
+    currentScore++
+    $('.js-current-score').text(currentScore);
+}
+
+function gotItRight() {
+    // Tell the user they got the question right.
+    // Display the explanation, source, and answerImage, beginning with the first in STORE and 
+    // cyclying through to 10.
+
+    console.log('`gotItRight` ran')
+    $('.js-answer').html(`<p class = "one-word-answer">You got it right!</p>
+    <p>${STORE[currentQuestionNumber].explanation}</p>
+    <p>${STORE[currentQuestionNumber].answerImage}</p>
+    <button type="button" class="js-next-button"> Next </button>`
+    )
+    updateScore()
+}
+
+function gotItWrong() {
+    // Tell the user they got the question wrong.
+    // Display the explanation, source, and answerImage, beginning with the first in STORE and 
+    // cyclying through to 10.
+    console.log('`gotItWrong` ran')
+    $('.js-answer').html(`<p class = "one-word-answer"> Nope.</p>
+    <p>${STORE[currentQuestionNumber].explanation}</p>
+    <p>${STORE[currentQuestionNumber].answerImage}</p>
+    <button type="button" class="js-next-button"> Next </button>`
+    )
+}
+
+function submitAnswer() {
+    // Submit user's answer, advance page to reveal correct answer.
+    $('.js-question-and-options').on('click', '.js-submit-button', event => {
+        event.preventDefault()
+        console.log('`submitAnswer` ran')
+        $('.js-question-and-options').hide()
+        $('.js-answer').show()
+        let selectedOption = $('input:checked').val()
+        let correctAnswer = STORE[currentQuestionNumber].answer
+        if (selectedOption === correctAnswer) {
+            gotItRight()
+        }
+        else {
+            gotItWrong()
+        }
+    })
+}
+
+function updateCurrentQuestionNumber() {
+    console.log('`updateCurrentQuestionNumber` ran')
+    currentQuestionNumber++
+    $('.js-current-question-number').text(currentQuestionNumber + 1)
+}
+
+function finalScore() {
+    // Tells user their final score and ivites them to retake the quiz.
+    $('.js-score-keeper').hide()
+    $('.js-end').show()
+  
+    return $('.js-end').html(
+        `<h3 class = "one-word-answer">Your Score</h3>
+        <p class = "one-word-answer">${currentScore} / 10</p>
+        <p class = "one-word-answer">Want to retake the quiz?  Click 'restart' to get started'.</p>
+        <button type="button" class="button"> Retake </button>`
+    )
+}
+// function showScore() {
+//     console.log('`showScore` ran')
+//     $('.js-end').append(`<h3>Your Score</h3>
+//         <p>${currentScore} / 10</p>
+//         <p>Want to retake the quiz? Click 'Retake' to begin.</p>
+//         <button type="button" class="js-retake-button"> Retake </button>`
+//     )
+// }
+
+function nextQuestion() {
+    // Next question, advance page to next question.
+    $('.js-answer').on('click', '.js-next-button', event => {
+        console.log('`nextQuestion` ran')
+        $('.js-answer').hide()
+        if (currentScore < 10) {
+            $('.js-question-and-options').show()
+            updateCurrentQuestionNumber()
+            selectQuestion()
+            $('.js-question-and-options form').replaceWith(selectQuestion())
+        }
+        else {
+            console.log('`nextQuestion`  ran')
+            $('.js-question-and-answer').hide()
+            finalScore()
+        }
+    })
+}
+
+function setQuestionNumberAndScoreToZero() {
+    currentQuestionNumber = 0
+    currentScore = 0
+}
+
+
+function retakeQuiz() {
+    // Retake quiz.
+    $('.js-end').on('click', 'button', event => {
+        console.log('`retakeQuiz` ran')
+        currentQuestionNumber = 0
+        $('.js-current-question-number').html(0)
+        currentScore = 0
+        $('.js-current-score').text(0)
+        $('.js-start').show()
+    })
+
+}
+
 function handleFiberQuiz() {
-        // This is the callback funtion.  It causes the javascript code to run once the page has loaded.
-        startQuiz()
-        submitAnswer()
-        nextQuestion()
-        retakeQuiz()
+    // This is the callback funtion.  It causes the javascript code to run once the page has loaded.
+    startQuiz()
+    submitAnswer()
+    nextQuestion()
+    retakeQuiz()
 }
 
 $(handleFiberQuiz)
-
-
-
-
-
