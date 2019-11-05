@@ -120,8 +120,8 @@ const STORE = [
             'Polyester',
             'Spandex',
             'All of the above'],
-        answer: 'Trick question!  It was all of the above - nylon, polyester, and spandex.',
-        explanation: 'All of the above.',
+        answer: 'All of the above.',
+        explanation: 'Trick question!  It was all of the above - nylon, polyester, and spandex.',
         source: 'https://en.wikipedia.org/wiki/Nylon',
         answerImage: '<img src = "images/dupont.jpg" alt = "Exterior of a Dupont facility.">'
     },
