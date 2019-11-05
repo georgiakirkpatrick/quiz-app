@@ -185,10 +185,13 @@ function startQuiz() {
     console.log('`startQuiz` ran')
     $('.js-start').on('click', '.js-start-button', event => {
         console.log('`start-button` was clicked')
+        let currentQuestionNumber = 0
+        let currentScore = 0
         $('.js-start').hide()
         $('.js-end').hide()
         $('.js-score-keeper').show()
-        $('.js-current-question-number').text(1);
+        $('.js-current-score').text(0)
+        $('.js-current-question-number').text(1)
         $('.js-question-and-answer').show()
         $('.js-question-and-options').append(selectQuestion())
     })
@@ -274,7 +277,7 @@ function nextQuestion() {
     $('.js-answer').on('click', '.js-next-button', event => {
         console.log('`nextQuestion` ran')
         $('.js-answer').hide()
-        if (currentScore < 10) {
+        if (currentScore <= 10) {
             $('.js-question-and-options').show()
             updateCurrentQuestionNumber()
             selectQuestion()
@@ -289,8 +292,8 @@ function nextQuestion() {
 }
 
 function setQuestionNumberAndScoreToZero() {
-    currentQuestionNumber = 0
-    currentScore = 0
+    let currentQuestionNumber = 0
+    let currentScore = 0
 }
 
 
