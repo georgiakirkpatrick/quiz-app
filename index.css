@@ -7,13 +7,9 @@
 }
 
 .quiz-title {
-    height: 100px;
     width: 100%;
-    vertical-align: middle;
-    /* border: 2px black solid; */
     background-color: darkslategray;
     color: white;
-    /* display: flex; */
 }
 
 h1 {
@@ -23,23 +19,19 @@ h1 {
 }
 
 h2, h3 {
-    font-family: 'Palanquin', sans-serif;
     padding: 20px;
 }
 
 p {    
-    font-family: 'Palanquin', sans-serif;
     font-size: 20px;
     padding: 10px;
 }
 
 .start-background {
-    /* height: 700px; */
     width: 100%;
     border: 5px solid #242732;
-    background: url("https://cdn.abetterlemonadestand.com/wp-content/uploads/2017/07/How-to-Start-a-Clothing-Line.jpg");
+    background: url("images/background.jpg");
     background-size: 100%;
-    /* display: flex; */
 }
 
 .start-page {
@@ -47,30 +39,24 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    width: 500px;
     background: white;
-    border: 2px black solid;
+    border: 2px #242732;
     padding: 20px;
-    /* vertical-align: middle; */
     margin: auto;
     margin-top: 60px;
     border-radius: 5px;
-    /* display: flex; */
 }
 
 button {
-    height: 50px;
+    height: 60px;
     width: 100px;
-    font-family: 'Palanquin', sans-serif;
     font-style: bold;
     color: white;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding-bottom: 1px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     padding-left: 10px;
-    /* transition-duration: 0.35s; */
-    /* transition-timing-function: ease-in-out; */
     cursor: pointer;
     background-color: #242732;
     border: 5px solid #c74f1a;
@@ -82,38 +68,21 @@ button {
     width: 100%;
     padding-top: 3px;
     padding-bottom: 3px;
-    font-family: 'Palanquin', sans-serif;
-    border-radius: 5px;
-    /* display: flex; */
 }
 
-/* .score-keeper ul {
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
-} */
-
 .question-and-answer {
-    display: flex;
+    display: flex none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* height: 600px; */
     width: 100%;
-    display: none;
-    /* border: 2px black solid; */
-    /* display: flex; */
+    
 }
 
 
 .question-string {
     width: 100%;
-    /* padding: 30px; */
-    /* padding-left: 300px;
-    padding-right: 300px; */
-    font-family: 'Palanquin', sans-serif;
-    /* border: 2px black solid; */
-    /* color: purple; */
+
 }
 
 .one-word-answer {
@@ -121,7 +90,7 @@ button {
     font-style: bold;
 }
 
-.answer {
+ .answer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -133,36 +102,27 @@ button {
     padding: 10px;
     padding-left: 100px;
     padding-right: 100px;
-    font-family: 'Palanquin', sans-serif;
-    /* border: 2px black solid; */
-    /* color: blue; */
 }
 
 .end {
+    display: none;
     height: 500px;
     width: 100%;
-    display: none;
-    /* display: flex; */
-    /* border: 2px black solid; */
 }
 
 @media screen and (min-width: 320px) {
-    .quiz-title {
+      .quiz-title {
         height: 160px;
-        background-color: thistle;
     }
 
     h1 {
         font-size: 40px;
-        padding: 20px;
+        padding: 10px;
+        padding-top: 40px;
     }    
 
-    h2, h3 {
-        font-family: 'Palanquin', sans-serif;
-    }
-
     .start-page {
-        height: 300px;
+        height: 350px;
         width: 300px;
     }
 
@@ -187,8 +147,13 @@ button {
         list-style: none;
     }
 
+    .answer p {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
     .answer p img {
-        width: 300px;
+      width: 300px;
     }
     
 }
@@ -197,16 +162,11 @@ button {
     .quiz-title {
         height: 100px;
         width: 100%;
-        background-color: darkslategray;
     }
 
     h1 {
         font-size: 40px;
         padding: 30px;
-    }
-
-    h2, h3 {
-        font-family: 'Palanquin', sans-serif;
     }
 
     .start-page {
@@ -232,6 +192,11 @@ button {
         list-style: none;
     }
 
+    .answer p {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
     .answer p img {
         width: 500px;
     }
@@ -241,22 +206,11 @@ button {
     .quiz-title {
         height: 160px;
         width: 100%;
-        background-color: darkslategray;
     }
 
     h1 {
         font-size: 60px;
         padding: 50px;
-    }
-
-    h2, h3 {
-        font-family: 'Palanquin', sans-serif;
-        padding: 20px;
-    }
-    
-    .start-page {
-        height: 300px;
-        width: 500px;
     }
 
     .start-background {
@@ -287,6 +241,6 @@ button {
     }
 
     .answer p img {
-        width: 450px;
+        width: 600px;
     }
 }  

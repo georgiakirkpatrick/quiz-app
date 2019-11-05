@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>What Are You Wearing?</title>
-    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Monoton|Palanquin&display=swap" rel="stylesheet">
-    <link rel = "stylesheet" href = "main.css">
-</head>
-
-<!-- type = "text/css" -->
-
-<body>
-    <header>
-        <section class = "quiz-title">
-            <h1> What Are You Wearing? </h1>
-        </section> 
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>What Are You Wearing?</title>
+        <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+        <link href="https://fonts.googleapis.com/css?family=Monoton|Palanquin&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "index.css">
+    </head>
+    
+    <body>
+        <header>
+            <section class = "quiz-title">
+                <h1> What Are You Wearing? </h1>
+            </section> 
+        </header>
 
 
 
-    <main>
-        <!-- Start Page: this is what the user sees when they first navigate to the app -->
-        <section class = "start-background js-start">
-            <section class = "start-page">
-                    <h3> How much do you know about the fiber in your clothes?</h3>
-                    <p>Test your knowledge with this ten-question quiz.</p>
-                    <button type="button" class="start-button">Start</button>
-            </section>
-        </section>
-
-        <!-- Question / Answer Page: these are the quiz questions and answers the user navigates through -->
-        <section class = "question-and-answer js-question-and-answer">
-            
-            <section class = "score-keeper js-score-keeper">
-                    <ul>
-                        <li>Question: <span class="js-current-question-number">  0  </span>  of  10</li>
-                        <li>Score: <span class="js-current-score">  0</span></li>
-                    </ul>
+        <main>
+            <!-- Start Page: this is what the user sees when they first navigate to the app -->
+            <section class = "start-background js-start">
+                <section class = "start-page">
+                        <h3> How much do you know about the fiber in your clothes?</h3>
+                        <p>Test your knowledge with this ten-question quiz.</p>
+                        <button type="button" class="start-button">Start</button>
+                </section>
             </section>
 
-            <!-- Question Page -->
-            <section class = "question js-question-and-options"></section> 
+            <!-- Question / Answer Page: these are the quiz questions and answers the user navigates through -->
+            <section class = "question-and-answer js-question-and-answer">
+                
+                <section class = "score-keeper js-score-keeper">
+                        <ul>
+                            <li>Question: <span class="js-current-question-number">  0  </span>  of  10</li>
+                            <li>Score: <span class="js-current-score">  0</span></li>
+                        </ul>
+                </section>
 
-            <!-- Answer Page -->
-            <section class = "answer js-answer"></section>
+                <!-- Question Page -->
+                <section class = "question js-question-and-options"></section> 
 
-        </section>
+                <!-- Answer Page -->
+                <section class = "answer js-answer"></section>
 
-        <!-- End Page     -->
-        <section class = "end js-end"></section>
-    </main>
+            </section>
 
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-    <script src="index.js"></script>
-</body>
+            <!-- End Page     -->
+            <section class = "end js-end"></section>
+        </main>
+
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+        </script>
+        <script src="index.js"></script>
+    </body>
 </html>

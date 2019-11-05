@@ -120,7 +120,7 @@ const STORE = [
             'Polyester',
             'Spandex',
             'All of the above'],
-        answer: 'All of the above',
+        answer: 'Trick question!  It was all of the above - nylon, polyester, and spandex.',
         explanation: 'All of the above.',
         source: 'https://en.wikipedia.org/wiki/Nylon',
         answerImage: '<img src = "images/dupont.jpg" alt = "Exterior of a Dupont facility.">'
@@ -134,25 +134,23 @@ const STORE = [
             'Modal'],
         answer: 'Wool', 
         explanation: `Wool fibers are covered in cuticle cells that have a waxy coating, making wool water-repellent.  Tiny pores in
-        the cuticle cells allow water vapor to pass through the wool fibre.  When wool absorbs moisture, it retains warmth.  
-        For example, if you go from a warm room into a cold, damp night wearing a wool jersey, the wool picks up water vapor
-        from the air, keeping you warm.  The reverse occurs when you go back into the warm room – the moisture in your jersey
+        the cuticle cells allow water vapor to pass through the wool fiber.  When wool absorbs moisture, it retains warmth.  For example, if you go from a warm room into a cold, damp night wearing a wool jersey, the wool picks up water vapor from the air, keeping you warm.  The reverse occurs when you go back into the warm room – the moisture in your jersey
         passes into the atmosphere, cooling you down.`,
         source: 'https://www.sciencelearn.org.nz/resources/875-wool-fibre-properties',
         answerImage: '<img src = "images/wool.jpg" alt = "Illustration of a cortical cell in wool fiber.">'
     }
 ]
 
+// These variables start the quiz at the first question with a score of zero.
 let currentQuestionNumber = 0
 let currentScore = 0
-
-
 
 function selectQuestion() {
     // This function advances through the questions in STORE until the user reaches the last question.
     if (currentQuestionNumber < STORE.length) {
         return renderQuestion(currentQuestionNumber)
     }
+    else
     finalScore();
     $('.js-current-question-number').text(10);
 }
@@ -167,14 +165,12 @@ function renderQuestion(index) {
         </form>`)
 
     let questionAndOptionStringFieldset = $(questionAndOptionString).find('fieldset');
-        // questionAndOptionStringFieldset finds the question so we can insert options underneath it.
+        // questionAndOptionStringFieldset finds the quiz question so we can insert answer options underneath it.
 
     STORE[index].options.forEach( function (answerValue, answerIndex) {
-        // This function iterates through STORE options at the given index and writes HTML for each,
-        // then inserts the options after the question in questionAndOptionStringFieldset
+        // This function iterates through STORE options at the given index and writes HTML for each, then inserts the options after the question in questionAndOptionStringFieldset
         $(`<label for="${answerIndex}"><span>${answerValue}</span></label>
-        <input type="radio" id="${answerIndex}" name="option" value="${answerValue}" required><br><br>
-        `).appendTo(questionAndOptionStringFieldset);
+        <input type="radio" id="${answerIndex}" name="option" value="${answerValue}" required><br><br>`).appendTo(questionAndOptionStringFieldset)
     })
 
     $(`<button type="button" class="js-submit-button"> Submit </button>`).appendTo(questionAndOptionStringFieldset)
@@ -187,10 +183,11 @@ function renderQuestion(index) {
 function startQuiz() {
     // Start the quiz, advance the page to the first question.
     console.log('`startQuiz` ran')
-    $('.js-start').on('click', '.start-button', event => {
+    $('.js-start').on('click', '.js-start-button', event => {
         console.log('`start-button` was clicked')
         $('.js-start').hide()
         $('.js-end').hide()
+        $('.js-score-keeper').show()
         $('.js-current-question-number').text(1);
         $('.js-question-and-answer').show()
         $('.js-question-and-options').append(selectQuestion())
@@ -230,21 +227,26 @@ function gotItWrong() {
 }
 
 function submitAnswer() {
-    // Submit user's answer, advance page to reveal correct answer.
-    $('.js-question-and-options').on('click', '.js-submit-button', event => {
-        event.preventDefault()
-        console.log('`submitAnswer` ran')
-        $('.js-question-and-options').hide()
-        $('.js-answer').show()
-        let selectedOption = $('input:checked').val()
-        let correctAnswer = STORE[currentQuestionNumber].answer
-        if (selectedOption === correctAnswer) {
-            gotItRight()
-        }
-        else {
-            gotItWrong()
-        }
-    })
+  // Submit user's answer, advance page to reveal correct answer.
+  $('.js-question-and-options').on('click', '.js-submit-button', event => {
+    event.preventDefault()
+    console.log('`submitAnswer` ran')
+    if (!$("input[name='option']:checked").val()) {
+      alert('Nothing is checked!');
+    }
+    else {
+      $('.js-question-and-options').hide()
+      $('.js-answer').show()
+      let selectedOption = $('input:checked').val()
+      let correctAnswer = STORE[currentQuestionNumber].answer
+      if (selectedOption === correctAnswer) {
+        gotItRight()
+      }
+      else {
+        gotItWrong()
+      }
+    }
+  })
 }
 
 function updateCurrentQuestionNumber() {
@@ -261,18 +263,10 @@ function finalScore() {
     return $('.js-end').html(
         `<h3 class = "one-word-answer">Your Score</h3>
         <p class = "one-word-answer">${currentScore} / 10</p>
-        <p class = "one-word-answer">Want to retake the quiz?  Click 'restart' to get started'.</p>
-        <button type="button" class="button"> Retake </button>`
+        <p class = "one-word-answer">Want to retake the quiz?  Click 'retake' to get started'.</p>
+        <button type="button" class="js-retake-button"> Retake </button>`
     )
 }
-// function showScore() {
-//     console.log('`showScore` ran')
-//     $('.js-end').append(`<h3>Your Score</h3>
-//         <p>${currentScore} / 10</p>
-//         <p>Want to retake the quiz? Click 'Retake' to begin.</p>
-//         <button type="button" class="js-retake-button"> Retake </button>`
-//     )
-// }
 
 function nextQuestion() {
     // Next question, advance page to next question.
@@ -301,15 +295,13 @@ function setQuestionNumberAndScoreToZero() {
 
 function retakeQuiz() {
     // Retake quiz.
-    $('.js-end').on('click', 'button', event => {
+    $('.js-end').on('click', 'js-retake-button', event => {
         console.log('`retakeQuiz` ran')
-        currentQuestionNumber = 0
+        setQuestionNumberAndScoreToZero()
         $('.js-current-question-number').html(0)
-        currentScore = 0
         $('.js-current-score').text(0)
         $('.js-start').show()
     })
-
 }
 
 function handleFiberQuiz() {
