@@ -292,8 +292,8 @@ function nextQuestion() {
 }
 
 function setQuestionNumberAndScoreToZero() {
-    let currentQuestionNumber = 0
-    let currentScore = 0
+    currentQuestionNumber = 0
+    currentScore = 0
 }
 
 
