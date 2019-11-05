@@ -18,7 +18,7 @@ const STORE = [
         answerImage: '<img src = "images/rayon-factory.jpg" alt = "Rayon factory.">'
     },
     {//2
-        question: `Which fiber is currently the world's most commonly-used clothing fabric?`,
+        question: `Which of these is currently the world's most commonly-used clothing fiber?`,
         options: [
             'Cotton',
             'Wool',
