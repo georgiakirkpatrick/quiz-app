@@ -257,6 +257,7 @@ function updateCurrentQuestionNumber() {
 
 function finalScore() {
     // Tells user their final score and ivites them to retake the quiz.
+    console.log('`finalScore` ran')
     $('.js-score-keeper').hide()
     $('.js-end').show()
   
